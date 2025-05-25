@@ -25,8 +25,8 @@ void Boss::updateAI(Map &map, std::vector<Tank*> &tanks, std::vector<Bullet> &bu
     }
     // เคลื่อนที่ไปหนึ่งก้าวในทิศทางปัจจุบัน
     move(ทิศทางX, ทิศทางY, map, tanks);
-    // ยิงกระสุนแบบสุ่ม แต่ถี่กว่า Enemy (เช่น ~10% ต่อรอบ)
-    if (rand() % 10 == 0) { // 1 ใน 10 โอกาส
+    // ยิงกระสุนแบบสุ่ม แต่ถี่กว่า Enemy (เช่น ~50% ต่อรอบ)
+    if (rand() % 2 == 0) { // 1 ใน 2 โอกาส
         Bullet b(ตำแหน่งX, ตำแหน่งY, ทิศทางX, ทิศทางY, พลังกระสุน, false);
         bullets.push_back(b);
     }

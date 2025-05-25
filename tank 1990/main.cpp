@@ -1,7 +1,7 @@
 #include "Game.h"
 #include <windows.h>
 int main() {
-    // ทำให้ terminal ใน visual studio code อ่านภาษาไทยออก
+    // ให้ terminal encrpy สามารถภาษาไทยได้
     system("chcp 65001 > nul");
     // สร้างเกมและเริ่มเล่น
     Game game;

@@ -11,16 +11,13 @@ private:
     int พลังกระสุน;     // ความแรงของกระสุน (ใช้ลดพลังชีวิตเป้าหมาย)
     bool เป็นมิตร;      // ระบุว่ากระสุนนี้มาจากฝั่งผู้เล่นหรือไม่ (true = ผู้เล่น, false = ศัตรู)
 public:
-    static const char สัญลักษณ์ = '*'; // สัญลักษณ์แทนกระสุนบนแผนที่
+    static const char สัญลักษณ์; // สัญลักษณ์แทนกระสุนบนแผนที่
     // Constructor: กำหนดตำแหน่ง, ทิศทาง, ความแรง และฝ่ายของกระสุน
     Bullet(int startX, int startY, int dirX, int dirY, int power, bool friendly)
         : ตำแหน่งX(startX), ตำแหน่งY(startY), ทิศทางX(dirX), ทิศทางY(dirY),
           พลังกระสุน(power), เป็นมิตร(friendly) {}
-    // ให้กระสุนเคลื่อนที่ไปข้างหน้า 1 ก้าว (ตามทิศทาง)
-    void moveForward() {
-        ตำแหน่งX += ทิศทางX;
-        ตำแหน่งY += ทิศทางY;
-    }
+    // ให้กระสุนเคลื่อนที่ไปข้างหน้า (ตามทิศทาง)
+    void moveForward();
     // Getter ต่าง ๆ
     int getX() const { return ตำแหน่งX; }
     int getY() const { return ตำแหน่งY; }

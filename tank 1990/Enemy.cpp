@@ -5,7 +5,7 @@
 
 // กำหนดค่าเริ่มต้นให้ Enemy
 Enemy::Enemy(int startX, int startY)
-    : Tank(startX, startY, 1, 1, 'E'), ทิศทางX(0), ทิศทางY(0) {
+    : Tank(startX, startY, 3, 1, 'E'), ทิศทางX(0), ทิศทางY(0) {
     // ตั้งค่าทิศทางเริ่มต้นแบบสุ่ม
     int d = rand() % 4;
     switch(d) {
@@ -31,7 +31,7 @@ void Enemy::updateAI(Map &map, std::vector<Tank*> &tanks, std::vector<Bullet> &b
     // พยายามขยับหนึ่งก้าวในทิศทางปัจจุบัน
     move(ทิศทางX, ทิศทางY, map, tanks);
     // ยิงกระสุนแบบสุ่ม (เช่น โอกาส ~5% ต่อรอบ)
-    if (rand() % 5 == 0) { // 1 ใน 20 โอกาส
+    if (rand() % 5 == 0) { // 1 ใน 5 โอกาส
         // สร้างกระสุน (เป็นกระสุนฝั่งศัตรู: เป็นมิตร = false)
         Bullet b(ตำแหน่งX, ตำแหน่งY, ทิศทางX, ทิศทางY, พลังกระสุน, false);
         bullets.push_back(b);
